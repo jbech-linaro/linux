@@ -125,4 +125,10 @@ config PCIE_IPROC_PLATFORM
 	  Say Y here if you want to use the Broadcom iProc PCIe controller
 	  through the generic platform bus interface
 
+config PCI_HOST_XR3
+	bool "XpressRICH 3 PCI Host Bridge"
+	depends on PCI && ARM64
+	help
+	  XpressRICH3-AXI PCI Host Bridge
+
 endmenu
