@@ -15,6 +15,15 @@ config ARM_MHU
 	  The controller has 3 mailbox channels, the last of which can be
 	  used in Secure mode only.
 
+config ARM_MHU_MBOX
+	tristate "ARM Message Handling Unit (MHU) Mailbox"
+	help
+	  This driver provides support for inter-processor communication
+	  (IPC) between two processors in a SoC.
+	  For example, System Control Processor(SCP) with Cortex-M3
+	  processor and Application Processors(AP) on few ARM platforms.
+	  SCP controls most of the power management on the AP.
+
 config PL320_MBOX
 	bool "ARM PL320 Mailbox"
 	depends on ARM_AMBA
