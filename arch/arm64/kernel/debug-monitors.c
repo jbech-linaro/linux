@@ -404,9 +404,11 @@ void kernel_enable_single_step(struct pt_regs *regs)
 
 void kernel_disable_single_step(void)
 {
+# ifdef CONFIG_ENABLE_HW_BREAKPOINT
 	WARN_ON(!irqs_disabled());
 	mdscr_write(mdscr_read() & ~DBG_MDSCR_SS);
 	disable_debug_monitors(DBG_ACTIVE_EL1);
+# endif
 }
 
 int kernel_active_single_step(void)

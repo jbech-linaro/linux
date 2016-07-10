@@ -247,9 +247,19 @@ config HAVE_CLK
 config HAVE_DMA_API_DEBUG
 	bool
 
+config ENABLE_HW_BREAKPOINT
+       bool "Enable hardware breakpoints."
+       default n
+       help
+         Enable hardware breakpoints.
+
+
+
 config HAVE_HW_BREAKPOINT
-	bool
-	depends on PERF_EVENTS
+       bool "Hardware breakpoints"
+       default n
+       depends on PERF_EVENTS && ENABLE_HW_BREAKPOINT
+
 
 config HAVE_MIXED_BREAKPOINTS_REGS
 	bool

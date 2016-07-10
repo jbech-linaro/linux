@@ -52,9 +52,15 @@
 /*
  * Enable and disable debug exceptions.
  */
+# ifdef CONFIG_ENABLE_HW_BREAKPOINT
+        .macro  disable_dbg
+        msr        daifset, #8
+        .endm
+# else
 	.macro	disable_dbg
 	msr	daifset, #8
 	.endm
+# endif
 
 	.macro	enable_dbg
 	msr	daifclr, #8

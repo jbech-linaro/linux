@@ -282,7 +282,9 @@ static int hw_breakpoint_control(struct perf_event *bp,
 		 * Release the debug monitors for the correct exception
 		 * level.
 		 */
+# ifdef CONFIG_ENABLE_HW_BREAKPOINT
 		disable_debug_monitors(dbg_el);
+# endif
 		break;
 	}
 

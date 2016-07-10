@@ -1,5 +1,6 @@
 #ifdef RPI364
 /memreserve/ 0x00000000 0x00001000;
+/memreserve/ 0x08000000 0x02000000;
 #endif
 
 
