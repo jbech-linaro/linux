@@ -102,7 +102,7 @@ struct tee_device {
 	char name[TEE_MAX_DEV_NAME_LEN];
 	const struct tee_desc *desc;
 	int id;
-	unsigned flags;
+	unsigned int flags;
 
 	struct device dev;
 	struct cdev cdev;

@@ -64,6 +64,8 @@ struct optee_wait_queue {
  * @data_from_supp:	requesting thread is waiting on this to get the result
  */
 struct optee_supp {
+	atomic_t available;
+
 	u32 func;
 	u32 ret;
 	size_t num_params;
