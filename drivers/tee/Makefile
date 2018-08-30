@@ -3,3 +3,7 @@ tee-objs += tee_core.o
 tee-objs += tee_shm.o
 tee-objs += tee_shm_pool.o
 obj-$(CONFIG_OPTEE) += optee/
+CFLAGS_tee.o = -O0
+CFLAGS_tee_core.o = -O0
+CFLAGS_tee_shm.o = -O0
+CFLAGS_tee_shm_pool.o = -O0

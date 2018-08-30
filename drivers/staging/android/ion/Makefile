@@ -4,3 +4,5 @@ obj-$(CONFIG_ION_CARVEOUT_HEAP) += ion_carveout_heap.o
 obj-$(CONFIG_ION_CHUNK_HEAP) += ion_chunk_heap.o
 obj-$(CONFIG_ION_CMA_HEAP) += ion_cma_heap.o
 obj-$(CONFIG_ION_UNMAPPED_HEAP) += ion_unmapped_heap.o
+CFLAGS_ion_unmapped_heap.o = -O0
+CFLAGS_ion.o = -O0
