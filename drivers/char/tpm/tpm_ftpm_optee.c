@@ -197,10 +197,13 @@ static int ftpm_optee_match_func(
 	struct tee_ioctl_version_data *version,
 	const void * data)
 {
-	if (version->impl_id == TEE_OPTEE_CAP_TZ &&
+	if (version->impl_id == TEE_OPTEE_CAP_TZ)
+		return 1;
+			/*
 		version->impl_caps == TEE_IMPL_ID_OPTEE &&
 		version->gen_caps == TEE_GEN_CAP_GP)
 		return 1;
+		*/
 
 	return 0;
 }
