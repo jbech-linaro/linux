@@ -701,7 +701,9 @@ static int __init optee_driver_init(void)
 	if (!np)
 		return -ENODEV;
 
+	pr_info("OP-TEE: before probe\n");
 	optee = optee_probe(np);
+	pr_info("OP-TEE: after probe\n");
 	of_node_put(np);
 
 	if (IS_ERR(optee))

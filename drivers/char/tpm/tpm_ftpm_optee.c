@@ -229,13 +229,13 @@ static int __init ftpm_optee_module_init(void)
 
 	mutex_init(&tpm_tee_context.response_buffer_lock);
 
-	tpm_tee_context.optee_context = tee_client_open_context(
-		NULL, 
-		ftpm_optee_match_func, 
-		NULL,
-		NULL);
-
-	if (IS_ERR(tpm_tee_context.optee_context))	{
+	pr_info("fTPM: before open context\n");
+	tpm_tee_context.optee_context = tee_client_open_context(NULL,
+								ftpm_optee_match_func,
+								NULL,
+								NULL);
+	pr_info("fTPM: after open context\n");
+	if (IS_ERR(tpm_tee_context.optee_context)) {
 		rc = PTR_ERR(tpm_tee_context.optee_context);
 		tpm_tee_context.optee_context = NULL;
 		goto cleanup;
@@ -282,7 +282,7 @@ static void __exit ftpm_optee_module_exit(void)
 	ftpm_optee_cleanup();
 }
 
-module_init(ftpm_optee_module_init);
+late_initcall(ftpm_optee_module_init);
 module_exit(ftpm_optee_module_exit);
 
 MODULE_AUTHOR("Jiri Appl (jiria@microsoft.com)");
