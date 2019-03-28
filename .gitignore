@@ -122,3 +122,6 @@ all.config
 
 # Kdevelop4
 *.kdev4
+
+# files to due fTPM out-of-tree/module builds
+lib/modules
