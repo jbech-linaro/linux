@@ -129,7 +129,7 @@ static int deferred_freelist_init(void)
 	}
 	sched_set_normal(freelist_task, 19);
 
-	return register_shrinker(&freelist_shrinker);
+	return register_shrinker(&freelist_shrinker, "deferred-free");
 }
 module_init(deferred_freelist_init);
 MODULE_LICENSE("GPL v2");
