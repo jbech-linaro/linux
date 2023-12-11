@@ -15,4 +15,5 @@ awk -F'[=, ]' '{printf "%s,%s,%s,", $3, $6, $9} END{print ""}' $OUT/stats_defcon
 ./scripts/bloat-o-meter -c $TINYLINUX_ELF vmlinux | grep -e "^Total" 2>&1 > $OUT/stats_tinyconfig.txt
 awk -F'[=, ]' '{printf "%s,%s,%s,", $3, $6, $9} END{print ""}' $OUT/stats_tinyconfig.txt > $OUT/csv_tinyconfig.txt
 cat $OUT/csv_defconfig.txt $OUT/csv_tinyconfig.txt | tr -d '\n' > $OUT/csv.txt
+git format-patch -1 && mv *.patch $OUT/
 
