@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-OUT=$HOME/aisin/$(sha1sum .config | awk '{print $1}')
+DIRSHA1=$(sha1sum .config | awk '{print $1}')
+OUT=$HOME/aisin/$DIRSHA1
 OUT_CSV=$OUT/csv.txt
 BOOT_LOG=../out/run.log
 mkdir -p $OUT
@@ -10,7 +11,8 @@ echo "Time to boot to init is: $TIMESTAMP"
 
 if [ -n "$TIMESTAMP" ]; then
     echo "Storing boot time results at $OUT_CSV"
-    sed -i "s/$/$TIMESTAMP/" "$OUT_CSV"
+    sed -i "s/$/$TIMESTAMP,/" "$OUT_CSV"
+    sed -i "s/$/$DIRSHA1/" "$OUT_CSV"
 else
     echo "Failed to boot to init"
     sed -i "s/$/-1/" "$OUT_CSV"
