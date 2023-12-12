@@ -1459,7 +1459,7 @@ config TRANS_TABLE
 	depends on HIBERNATION || KEXEC_CORE
 
 config XEN_DOM0
-	def_bool y
+	def_bool n
 	depends on XEN
 
 config XEN
