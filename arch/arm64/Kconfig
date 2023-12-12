@@ -1067,7 +1067,7 @@ config CAVIUM_TX2_ERRATUM_219
 
 config FUJITSU_ERRATUM_010001
 	bool "Fujitsu-A64FX erratum E#010001: Undefined fault may occur wrongly"
-	default y
+	default n
 	help
 	  This option adds a workaround for Fujitsu-A64FX erratum E#010001.
 	  On some variants of the Fujitsu-A64FX cores ver(1.0, 1.1), memory
@@ -1086,7 +1086,7 @@ config FUJITSU_ERRATUM_010001
 
 config HISILICON_ERRATUM_161600802
 	bool "Hip07 161600802: Erroneous redistributor VLPI base"
-	default y
+	default n
 	help
 	  The HiSilicon Hip07 SoC uses the wrong redistributor base
 	  when issued ITS commands such as VMOVP and VMAPP, and requires
@@ -1096,7 +1096,7 @@ config HISILICON_ERRATUM_161600802
 
 config QCOM_FALKOR_ERRATUM_1003
 	bool "Falkor E1003: Incorrect translation due to ASID change"
-	default y
+	default n
 	help
 	  On Falkor v1, an incorrect ASID may be cached in the TLB when ASID
 	  and BADDR are changed together in TTBRx_EL1. Since we keep the ASID
@@ -1107,7 +1107,7 @@ config QCOM_FALKOR_ERRATUM_1003
 
 config QCOM_FALKOR_ERRATUM_1009
 	bool "Falkor E1009: Prematurely complete a DSB after a TLBI"
-	default y
+	default n
 	select ARM64_WORKAROUND_REPEAT_TLBI
 	help
 	  On Falkor v1, the CPU may prematurely complete a DSB following a
@@ -1118,7 +1118,7 @@ config QCOM_FALKOR_ERRATUM_1009
 
 config QCOM_QDF2400_ERRATUM_0065
 	bool "QDF2400 E0065: Incorrect GITS_TYPER.ITT_Entry_size"
-	default y
+	default n
 	help
 	  On Qualcomm Datacenter Technologies QDF2400 SoC, ITS hardware reports
 	  ITE size incorrectly. The GITS_TYPER.ITT_Entry_size field should have
@@ -1128,7 +1128,7 @@ config QCOM_QDF2400_ERRATUM_0065
 
 config QCOM_FALKOR_ERRATUM_E1041
 	bool "Falkor E1041: Speculative instruction fetches might cause errant memory access"
-	default y
+	default n
 	help
 	  Falkor CPU may speculatively fetch instructions from an improper
 	  memory location when MMU translation is changed from SCTLR_ELn[M]=1
@@ -1138,7 +1138,7 @@ config QCOM_FALKOR_ERRATUM_E1041
 
 config NVIDIA_CARMEL_CNP_ERRATUM
 	bool "NVIDIA Carmel CNP: CNP on Carmel semantically different than ARM cores"
-	default y
+	default n
 	help
 	  If CNP is enabled on Carmel cores, non-sharable TLBIs on a core will not
 	  invalidate shared TLB entries installed by a different core, as it would
@@ -1148,7 +1148,7 @@ config NVIDIA_CARMEL_CNP_ERRATUM
 
 config SOCIONEXT_SYNQUACER_PREITS
 	bool "Socionext Synquacer: Workaround for GICv3 pre-ITS"
-	default y
+	default n
 	help
 	  Socionext Synquacer SoCs implement a separate h/w block to generate
 	  MSI doorbell writes with non-zero values for the device ID.
