@@ -1978,7 +1978,7 @@ config ARM64_AS_HAS_MTE
 
 config ARM64_MTE
 	bool "Memory Tagging Extension support"
-	default y
+	default n
 	depends on ARM64_AS_HAS_MTE && ARM64_TAGGED_ADDR_ABI
 	depends on AS_HAS_ARMV8_5
 	depends on AS_HAS_LSE_ATOMICS
