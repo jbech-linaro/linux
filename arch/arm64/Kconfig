@@ -1913,7 +1913,7 @@ config AS_HAS_ARMV8_5
 
 config ARM64_BTI
 	bool "Branch Target Identification support"
-	default y
+	default n
 	help
 	  Branch Target Identification (part of the ARMv8.5 Extensions)
 	  provides a mechanism to limit the set of locations to which computed
