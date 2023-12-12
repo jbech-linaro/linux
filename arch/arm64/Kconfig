@@ -2025,7 +2025,7 @@ endmenu # "ARMv8.7 architectural features"
 
 config ARM64_SVE
 	bool "ARM Scalable Vector Extension support"
-	default y
+	default n
 	help
 	  The Scalable Vector Extension (SVE) is an extension to the AArch64
 	  execution state which complements and extends the SIMD functionality
@@ -2056,7 +2056,7 @@ config ARM64_SVE
 
 config ARM64_SME
 	bool "ARM Scalable Matrix Extension support"
-	default y
+	default n
 	depends on ARM64_SVE
 	help
 	  The Scalable Matrix Extension (SME) is an extension to the AArch64
