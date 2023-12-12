@@ -988,7 +988,7 @@ config ARM64_ERRATUM_2645198
 
 config CAVIUM_ERRATUM_22375
 	bool "Cavium erratum 22375, 24313"
-	default y
+	default n
 	help
 	  Enable workaround for errata 22375 and 24313.
 
@@ -1006,7 +1006,7 @@ config CAVIUM_ERRATUM_22375
 config CAVIUM_ERRATUM_23144
 	bool "Cavium erratum 23144: ITS SYNC hang on dual socket system"
 	depends on NUMA
-	default y
+	default n
 	help
 	  ITS SYNC command hang for cross node io and collections/cpu mapping.
 
@@ -1014,7 +1014,7 @@ config CAVIUM_ERRATUM_23144
 
 config CAVIUM_ERRATUM_23154
 	bool "Cavium errata 23154 and 38545: GICv3 lacks HW synchronisation"
-	default y
+	default n
 	help
 	  The ThunderX GICv3 implementation requires a modified version for
 	  reading the IAR status to ensure data synchronization
@@ -1028,7 +1028,7 @@ config CAVIUM_ERRATUM_23154
 
 config CAVIUM_ERRATUM_27456
 	bool "Cavium erratum 27456: Broadcast TLBI instructions may cause icache corruption"
-	default y
+	default n
 	help
 	  On ThunderX T88 pass 1.x through 2.1 parts, broadcast TLBI
 	  instructions may cause the icache to become corrupted if it
@@ -1039,7 +1039,7 @@ config CAVIUM_ERRATUM_27456
 
 config CAVIUM_ERRATUM_30115
 	bool "Cavium erratum 30115: Guest may disable interrupts in host"
-	default y
+	default n
 	help
 	  On ThunderX T88 pass 1.x through 2.2, T81 pass 1.0 through
 	  1.2, and T83 Pass 1.0, KVM guest execution may disable
@@ -1050,7 +1050,7 @@ config CAVIUM_ERRATUM_30115
 
 config CAVIUM_TX2_ERRATUM_219
 	bool "Cavium ThunderX2 erratum 219: PRFM between TTBR change and ISB fails"
-	default y
+	default n
 	help
 	  On Cavium ThunderX2, a load, store or prefetch instruction between a
 	  TTBR update and the corresponding context synchronizing operation can
