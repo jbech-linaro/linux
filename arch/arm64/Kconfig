@@ -309,7 +309,7 @@ config ILLEGAL_POINTER_VALUE
 	default 0xdead000000000000
 
 config LOCKDEP_SUPPORT
-	def_bool y
+	def_bool n
 
 config GENERIC_BUG
 	def_bool y
