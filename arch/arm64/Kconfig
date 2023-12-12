@@ -2013,7 +2013,7 @@ menu "ARMv8.7 architectural features"
 
 config ARM64_EPAN
 	bool "Enable support for Enhanced Privileged Access Never (EPAN)"
-	default y
+	default n
 	depends on ARM64_PAN
 	help
 	  Enhanced Privileged Access Never (EPAN) allows Privileged
